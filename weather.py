@@ -2,9 +2,9 @@ import requests               # url:get 요청
 import csv                    # csv로 저장
 import os                     # 폴더 생성
 from datetime import datetime # 시간 변환
-API_KEY_W = "e81183ca52c7d93a1679478157b383b2"
+API_KEY = os.getevn("API_KEY_W")
 city = "seoul"
-url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY_W}&units=matric"
+url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}&units=matric"
 response = requests.get(url)
 result = response.json()
 # 현재 기온
